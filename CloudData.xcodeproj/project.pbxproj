@@ -12,6 +12,7 @@
 		4D56CCDF200A3E3D0026AB19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D56CCDD200A3E3D0026AB19 /* Main.storyboard */; };
 		4D56CCE1200A3E3D0026AB19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D56CCE0200A3E3D0026AB19 /* Assets.xcassets */; };
 		4D56CCE4200A3E3D0026AB19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D56CCE2200A3E3D0026AB19 /* LaunchScreen.storyboard */; };
+		4D56CCEE200A40000026AB19 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D56CCED200A40000026AB19 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		4D56CCE0200A3E3D0026AB19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D56CCE3200A3E3D0026AB19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D56CCE5200A3E3D0026AB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D56CCEB200A3FFC0026AB19 /* CloudData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudData.entitlements; sourceTree = "<group>"; };
+		4D56CCED200A40000026AB19 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D56CCEE200A40000026AB19 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				4D56CCD8200A3E3D0026AB19 /* CloudData */,
 				4D56CCD7200A3E3D0026AB19 /* Products */,
+				4D56CCEC200A40000026AB19 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +59,7 @@
 		4D56CCD8200A3E3D0026AB19 /* CloudData */ = {
 			isa = PBXGroup;
 			children = (
+				4D56CCEB200A3FFC0026AB19 /* CloudData.entitlements */,
 				4D56CCD9200A3E3D0026AB19 /* AppDelegate.swift */,
 				4D56CCDB200A3E3D0026AB19 /* ViewController.swift */,
 				4D56CCDD200A3E3D0026AB19 /* Main.storyboard */,
@@ -62,6 +68,14 @@
 				4D56CCE5200A3E3D0026AB19 /* Info.plist */,
 			);
 			path = CloudData;
+			sourceTree = "<group>";
+		};
+		4D56CCEC200A40000026AB19 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D56CCED200A40000026AB19 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +111,14 @@
 					4D56CCD5200A3E3D0026AB19 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -274,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CloudData/CloudData.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8GWSL85966;
 				INFOPLIST_FILE = CloudData/Info.plist;
@@ -289,6 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CloudData/CloudData.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8GWSL85966;
 				INFOPLIST_FILE = CloudData/Info.plist;
